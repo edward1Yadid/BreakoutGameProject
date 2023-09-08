@@ -72,12 +72,13 @@ h1 {
     transform: translateX(0);
 }
 
-#sounds {
-    position: absolute;
-    left: 560px;
-    top: 175px;
-    border-radius: 10px;
-    cursor: pointer;
+#buttonStartAandSound {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    width: 800px;
+
 }
 
 #startBtn {

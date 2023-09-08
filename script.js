@@ -3,7 +3,7 @@
 const rulesBtn = document.getElementById("rules-button");
 const closeBtn = document.getElementById("close-button");
 const rules = document.getElementById("rules");
-const doAnimation = true;
+
 rulesBtn.addEventListener("click", () => {
   rules.classList.add("show");
 });
@@ -42,7 +42,7 @@ function drawBall() {
 const paddle = {
   x: canvas.width / 2 - 40, // postion middel
   y: canvas.height / 2 + 250, // postion middel down
-  w: 80, //size of ball
+  w: 100, //size of ball
   h: 20,
   dx: 0,
   speed: 5,
@@ -154,10 +154,10 @@ function moveBll() {
     column.forEach((brick) => {
       if (brick.visible) {
         if (
-          ball.x - ball.size > brick.t &&
-          ball.x + ball.size < brick.t + brick.s &&
-          ball.y + ball.size > brick.s &&
-          ball.y - ball.size < brick.s + infoBrinks.h
+          ball.x - ball.size > brick.t - 20 &&
+          ball.x + ball.size < brick.t + brick.s - 20 &&
+          ball.y + ball.size > brick.s - 20 &&
+          ball.y - ball.size < brick.s + infoBrinks.h - 20
         ) {
           ball.dy *= -1;
           audioManager();
@@ -173,19 +173,16 @@ function moveBll() {
 
   if (ball.y + ball.size > canvas.height) {
     score = 0;
-    update();
+    alert("Game Over!");
+    document.location.reload();
 
+    update();
     Bricks.forEach((column) => {
       column.forEach((bricks) => {
         bricks.visible = false;
       });
     });
   }
-}
-const startBtn = document.getElementById("startBtn");
-startBtn.addEventListener("click", start);
-function start() {
-  update();
 }
 
 function drawCnvas() {
@@ -197,11 +194,23 @@ function drawCnvas() {
 }
 
 function update() {
+  if (!isAnimating.value) return;
   movePaddle();
   moveBll();
   requestAnimationFrame(update);
   drawCnvas();
 }
+
+const isAnimating = { value: false };
+
+const startBtn = document.getElementById("startBtn");
+
+startBtn.addEventListener("click", () => {
+  if (!isAnimating.value) {
+    isAnimating.value = true;
+    update();
+  }
+});
 
 //win game
 function increasescore() {
