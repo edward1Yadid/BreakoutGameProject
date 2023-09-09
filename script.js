@@ -70,7 +70,7 @@ function drawScore() {
 ///// create a bricks
 
 const brickRowCount = 9;
-const brickColumnsCount = 6;
+const brickColumnsCount = 5;
 
 const infoBrinks = {
   w: 70,
@@ -144,9 +144,9 @@ function moveBll() {
     ball.dy *= -1; ///change that
   }
   if (
-    ball.x - ball.size > paddle.x &&
-    ball.x + ball.size < paddle.x + paddle.w &&
-    ball.y + ball.size > paddle.y
+    ball.x - ball.size - 3 > paddle.x &&
+    ball.x + ball.size - 3 < paddle.x + paddle.w &&
+    ball.y + ball.size - 3 > paddle.y
   ) {
     ball.dy = -ball.speed;
   }
@@ -162,7 +162,7 @@ function moveBll() {
           ball.dy *= -1;
           audioManager();
           brick.visible = false;
-
+          drawSong(score, arraySong);
           increasescore();
         }
       }
@@ -173,7 +173,9 @@ function moveBll() {
 
   if (ball.y + ball.size > canvas.height) {
     score = 0;
-    alert("Game Over!");
+    alert(
+      "Better luck next time! Keep practicing and you'll master this game."
+    );
     document.location.reload();
 
     update();
@@ -260,5 +262,47 @@ function audioManager() {
   let brickHit = new Audio("/sounds/bricgHit.mp3");
   if (brickHit.paused) {
     brickHit.play();
+  }
+}
+const arraySong = [
+  "We don't need no education",
+  "We don't need no thought control",
+  "No dark sarcasm in the classroom",
+  "Teacher, leave them kids alone",
+  "Hey, teacher, leave them kids alone",
+  "All in all, it's just another brick in the wall",
+  "All in all, you're just another brick in the wall",
+  "We don't need no education",
+  "We don't need no thought control",
+  "No dark sarcasm in the classroom",
+  "Teachers, leave them kids alone",
+  "Hey, teacher, leave us kids alone",
+  "All in all, you're just another brick in the wall",
+  "All in all, you're just another brick in the wall",
+  "If you don't eat yer meat, you can't have any pudding",
+  "How can you have any pudding if you don't eat yer meat?",
+  "You! Yes, you behind the bike stands",
+];
+
+const divSong = document.createElement("div");
+divSong.id = "divSong";
+document.body.appendChild(divSong);
+const song = document.getElementById("song");
+let line = document.createElement("li");
+divSong.appendChild(song);
+function drawSong(score, arraySong) {
+  if (score == 17) {
+    for (i = 0; i < 17; i++) {}
+    line.innerHTML += `<li class="lyricsLine">${arraySong[i]}</li>`;
+
+    song.appendChild(line);
+    audioManagerRington();
+  }
+}
+
+function audioManagerRington() {
+  let BrinOnTheWall = new Audio("/sounds/anotherBricOnTheWall.mp3");
+  if (BrinOnTheWall.paused) {
+    BrinOnTheWall.play();
   }
 }

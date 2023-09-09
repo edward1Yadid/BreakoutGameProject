@@ -89,3 +89,68 @@ h1 {
     background-color: rgb(139, 15, 15);
     color: antiquewhite;
 }
+
+#divSong {
+    width: 400px;
+    height: auto;
+    position: fixed;
+    top: 30%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+
+}
+
+#divSong #song {
+    list-style: none;
+}
+
+.lyricsLine {
+    list-style: none;
+    line-height: 1.5;
+    letter-spacing: 1.5;
+    color: #b52323;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+}
+
+.popup-contianer {
+    background-color: rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* display: flex; */
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup {
+
+    background-color: #2980b9;
+    border-radius: 3px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    padding: 40px;
+    text-align: center;
+}
+
+.popup button {
+    cursor: pointer;
+    border-radius: 3px;
+    padding: 12px 20px;
+    margin-top: 20px;
+    color: antiquewhite;
+    background-color: blue;
+    border: 0;
+
+}
+
+.popup button:active {
+    transform: scale(0.98);
+}
+
+.popup button:focus {
+    outline: 0;
+}
