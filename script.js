@@ -259,7 +259,7 @@ function keyup(e) {
 //audio
 
 function audioManager() {
-  let brickHit = new Audio("/sounds/bricgHit.mp3");
+  let brickHit = new Audio("./sounds/bricgHit.mp3.mp3");
   if (brickHit.paused) {
     brickHit.play();
   }
