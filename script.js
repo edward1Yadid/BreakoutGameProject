@@ -274,8 +274,8 @@ const song = document.getElementById("songDraw");
 let line = document.createElement("li");
 song.appendChild(line);
 function drawSong(score, arraySong) {
-  if (score == 3) {
-    for (i = 0; i < 3; i++) {
+  if (score == 17) {
+    for (i = 0; i < arraySong.length; i++) {
       line.innerHTML += `<li class="lyricsLine">${arraySong[i]}</li>`;
 
       song.appendChild(line);
