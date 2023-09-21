@@ -81,6 +81,35 @@ h1 {
 
 }
 
+
+#songDraw {
+    padding: 20px;
+    width: 400px;
+    height: auto;
+    list-style: none;
+}
+
+#startBtn {
+    cursor: pointer;
+    border: 0;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: rgb(139, 15, 15);
+    color: antiquewhite;
+
+}
+
+
+
+.lyricsLine {
+    list-style: none;
+    line-height: 1.5;
+    letter-spacing: 1.5;
+    color: #b52323;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+}
+
 @media screen and (max-width:1000px) {
     #buttonStartAandSound {
         width: 600px;
@@ -94,47 +123,28 @@ h1 {
 
 }
 
-@media screen and (max-width:600px) {
+@media screen and (max-width:612px) and (min-width:999px) {
     #buttonStartAandSound {
-        width: 300px;
+        width: 100px;
 
     }
 
     #canvas {
-        width: 300px;
+        width: 100px;
     }
 
-}
-
-#startBtn {
-    cursor: pointer;
-    border: 0;
-    padding: 10px 20px;
-    border-radius: 5px;
-    background-color: rgb(139, 15, 15);
-    color: antiquewhite;
-}
-
-#divSong {
-    width: 400px;
-    height: auto;
-    position: fixed;
-    top: 30%;
-    left: 80%;
-    transform: translate(-50%, -50%);
-    padding: 10px;
 
 }
 
-#divSong #song {
-    list-style: none;
-}
+@media screen and (max-width:320px) and (min-width:599px) {
+    #buttonStartAandSound {
+        width: 200px;
 
-.lyricsLine {
-    list-style: none;
-    line-height: 1.5;
-    letter-spacing: 1.5;
-    color: #b52323;
-    padding: 10px;
-    font-family: Arial, sans-serif;
+    }
+
+    #canvas {
+        width: 200px;
+    }
+
+
 }

@@ -270,14 +270,11 @@ const arraySong = [
   "No dark sarcasm in the classroom",
 ];
 
-const divSong = document.createElement("div");
-divSong.id = "divSong";
-document.body.appendChild(divSong);
-const song = document.getElementById("song");
+const song = document.getElementById("songDraw");
 let line = document.createElement("li");
-divSong.appendChild(song);
+song.appendChild(line);
 function drawSong(score, arraySong) {
-  if (score == 17) {
+  if (score == 3) {
     for (i = 0; i < 3; i++) {
       line.innerHTML += `<li class="lyricsLine">${arraySong[i]}</li>`;
 
