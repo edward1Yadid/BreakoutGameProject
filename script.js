@@ -259,7 +259,7 @@ function keyup(e) {
 //audio
 
 function audioManager() {
-  let brickHit = new Audio("./sounds/bricgHit.mp3.mp3");
+  let brickHit = new Audio("./sounds/bricgHit.mp3");
   if (brickHit.paused) {
     brickHit.play();
   }
@@ -292,16 +292,17 @@ let line = document.createElement("li");
 divSong.appendChild(song);
 function drawSong(score, arraySong) {
   if (score == 17) {
-    for (i = 0; i < 17; i++) {}
-    line.innerHTML += `<li class="lyricsLine">${arraySong[i]}</li>`;
+    for (i = 0; i < 17; i++) {
+      line.innerHTML += `<li class="lyricsLine">${arraySong[i]}</li>`;
 
-    song.appendChild(line);
-    audioManagerRington();
+      song.appendChild(line);
+      audioManagerRington();
+    }
   }
 }
 
 function audioManagerRington() {
-  let BrinOnTheWall = new Audio("/sounds/anotherBricOnTheWall.mp3");
+  let BrinOnTheWall = new Audio("./sounds/anotherBricOnTheWall.mp3");
   if (BrinOnTheWall.paused) {
     BrinOnTheWall.play();
   }
