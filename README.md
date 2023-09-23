@@ -40,3 +40,14 @@ Win or Lose:
 
 Win by clearing all levels and breaking all bricks.
 Lose by allowing the ball to fall off the screen.
+
+
+## Issue with `location.reload()`
+
+The `location.reload()` method is used to refresh the page and reset the game. In some browsers, particularly Chrome, there may be unexpected behavior when using this method. The game might not reset correctly, or the page may not reload as expected.
+
+## Workaround
+
+For an optimal experience, we recommend playing the game in Mozilla Firefox, where the `location.reload()` function works as intended. If you encounter issues in other browsers, you may need to manually refresh the page to reset the game.
+
+Feel free to provide feedback and report any browser-specific issues you encounter. Thank you for playing the BreakoutGame
