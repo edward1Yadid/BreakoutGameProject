@@ -1,4 +1,4 @@
-# BreakoutGmeProject
+# BreakoutGameProject
 
 Welcome to Breakout Game! This project is a classic arcade game created using HTML, CSS, JavaScript, and the HTML5 Canvas element.
 
